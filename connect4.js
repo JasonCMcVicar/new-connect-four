@@ -85,7 +85,8 @@ function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
   const targetCell = document.getElementById(`${y}-${x}`);
   const playedPiece = document.createElement("div");
-  // set attributes?
+  // set attributes
+  playedPiece.classList.add('piece','player1');
   targetCell.appendChild(playedPiece);
 }
 
