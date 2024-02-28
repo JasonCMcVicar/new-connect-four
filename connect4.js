@@ -11,7 +11,7 @@ const WIDTH = 7;
 const HEIGHT = 6;
 
 let currPlayer = 1; // active player: 1 or 2
-let board = []; // array of rows, each row is array of cells  (board[y][x])
+const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
@@ -28,7 +28,9 @@ function makeBoard() {
     }
     board.push(thisIsARow);
   }
-
+  // let's take a look at our virtual board (board in memory)
+  console.log("board variable = ", board);
+  return board;
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
@@ -111,6 +113,8 @@ function handleClick(evt) {
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
   placeInTable(y, x);
+  board[y, x] = currPlayer;
+  currPlayer === 1 ? currPlayer = 2 : currPlayer = 1;
 
   // check for win
   if (checkForWin()) {
