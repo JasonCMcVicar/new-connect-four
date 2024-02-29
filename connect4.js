@@ -78,7 +78,7 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 5
-  return 5;
+  return 4;
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
@@ -122,8 +122,11 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
-  if (board.every(!null)) {
-    return endGame(`Tie Game`);
+
+  for (let i = 0; i < board.length; i++){
+    if (board[i].every(spot => spot !== null)) {
+      return endGame(`Tie Game`);
+    }
   }
   // switch players
   // TODO: switch currPlayer 1 <-> 2
