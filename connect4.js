@@ -19,7 +19,6 @@ const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-  //let board = [];
   for (let i = 0; i < HEIGHT; i++) {
     let thisIsARow = [];
 
@@ -90,7 +89,6 @@ function placeInTable(y, x) {
   // set attributes
   playedPiece.classList.add('piece','player1');
   targetCell.appendChild(playedPiece);
-  console.log("board in the placeInTable function is ", board);
 }
 
 /** endGame: announce game end */
@@ -115,8 +113,6 @@ function handleClick(evt) {
   // TODO: add line to update in-memory board
   placeInTable(y, x);
   board[y][x] = currPlayer;
-  console.log("currPlayer = ", currPlayer);
-  console.log("board is ", board);
   // check for win
   if (checkForWin()) {
     return endGame(`Player ${currPlayer} won!`);
@@ -125,15 +121,9 @@ function handleClick(evt) {
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
 
-  // for (let i = 0; i < board.length; i++){
-  //   if (board[i].every(spot => spot !== null)) {
-  //     return endGame(`Tie Game`);
-  //   }
-  // }
   const fullCheck = (currentSpot) => currentSpot === null;
   if (board[0].every(fullCheck)) {
-    // endGame(`Tie Game`);
-    console.log("hi");
+    endGame(`Tie Game`);
   }
 
   // switch players
