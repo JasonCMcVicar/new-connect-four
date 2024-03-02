@@ -92,7 +92,10 @@ function placeInTable(y, x) {
   const targetCell = document.getElementById(`${y}-${x}`);
   const playedPiece = document.createElement("div");
   // set attributes
-  playedPiece.classList.add('piece','player1');
+  // set player
+  let player = '';
+  currPlayer === 1 ? player = 'player1' : player = 'player2';
+  playedPiece.classList.add('piece', player);
   targetCell.appendChild(playedPiece);
 }
 
