@@ -103,6 +103,7 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   // TODO: pop up alert message
+  alert(msg);
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -129,7 +130,7 @@ function handleClick(evt) {
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
 
-  const fullCheck = (currentSpot) => currentSpot === null;
+  const fullCheck = (currentSpot) => currentSpot !== null;
   if (board[0].every(fullCheck)) {
     endGame(`Tie Game`);
   }
