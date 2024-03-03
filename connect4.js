@@ -214,3 +214,7 @@ function checkForWin() {
 
 makeBoard();
 makeHtmlBoard();
+// Optional final step to add animation of the piece dropping
+// If you change the .piece divs to be positioned absolutely, you can animate
+// the top CSS property to animate the pieces so they appear to drop down
+// working with relative/absolute positioning
