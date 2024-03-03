@@ -32,6 +32,14 @@ function makeBoard() {
   return board;
 }
 
+// SOLUTION IS MUCH MORE ELEGANT
+
+// function makeBoard() {
+//   for (let y = 0; y < HEIGHT; y++) {
+//     board.push(Array.from({ length: WIDTH }));
+//   }
+// }
+
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
