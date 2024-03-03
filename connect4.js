@@ -85,6 +85,17 @@ function findSpotForCol(x) {
   return null;
 }
 
+// COURSE SOLUTION
+
+// function findSpotForCol(x) {
+//   for (let y = HEIGHT - 1; y >= 0; y--) {
+//     if (!board[y][x]) {
+//       return y;
+//     }
+//   }
+//   return null;
+// }
+
 /** placeInTable: update DOM to place piece into HTML table of board */
 
 function placeInTable(y, x) {
@@ -186,6 +197,17 @@ function checkForWin() {
       }
     }
     return true;
+
+    // THIS WAS THE COURSE SOLUTION: COVERS THE ENTIRE STUB FUNCTION
+
+    // return cells.every(
+    //   ([y, x]) =>
+    //     y >= 0 &&
+    //     y < HEIGHT &&
+    //     x >= 0 &&
+    //     x < WIDTH &&
+    //     board[y][x] === currPlayer
+    // );
 }
 
   // using HEIGHT and WIDTH, generate "check list" of coordinates
